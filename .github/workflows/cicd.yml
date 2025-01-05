@@ -22,6 +22,8 @@ jobs:
     needs: build
     runs-on: self-hosted
     steps:
+      - name: remove nodejs-aws-deploy-container
+        run: docker rm nodejs-aws-deploy-container
       - name: pull image from docker hub
         run: docker pull ${{ secrets.DOCKER_USERNAME }}/nodejs:latest
       - name: run docker container
