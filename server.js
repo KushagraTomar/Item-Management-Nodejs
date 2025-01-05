@@ -86,7 +86,7 @@ async function deleteObject(key) {
 };
 
 app.get('/', (req, res) => {
-  res.status(200).json("Welcome to Item Management System");
+  res.status(200).json({message: "Welcome to Item Management System"});
 });
 
 app.post('/items', upload.single('image'), async (req, res) => {
